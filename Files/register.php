@@ -33,7 +33,7 @@ $request_name = mysqli_query($mysqli, $sql_check);
 
 //활동할 닉네임 중복 체크
 if (mysqli_num_rows($request_name) === 1){
-    echo "이미 해당 닉네임이 존재합니다."
+    echo "이미 해당 닉네임이 존재합니다.";
 }
 
 //transaction
@@ -59,4 +59,5 @@ if($result_register){
 }
 
 mysqli_close($mysqli);
+
 ?>
