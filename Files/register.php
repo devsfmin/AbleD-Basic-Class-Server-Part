@@ -20,7 +20,7 @@ if ($user_name==NULL || $email==NULL || $pwd==NULL){//정보 입력에 누락이
 
 //데이터 저장 및 유효성 검사
 $mysqli = mysqli_connect(//접근하기
-    'localhost', 'min', '0000', 'members','3306') or die ("Can't access DB");
+    'localhost', 'min', '0000', 'members','3306');
 
 if (mysqli_connect_errno())//접근 실패 시
 {
@@ -29,7 +29,7 @@ exit();
 }
 
 
-$sql_check = "SELECT * FROM members WHERE user_name='$user_name'";
+$sql_check = "SELECT * FROM new_table WHERE user_name='$user_name'";
 $request_name = mysqli_query($mysqli, $sql_check);
 
 //활동할 닉네임 중복 체크
