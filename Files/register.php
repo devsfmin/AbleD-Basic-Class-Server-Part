@@ -23,16 +23,14 @@ $mysqli = mysqli_connect(//접근하기
     'localhost', 'min', '0000', 'members','3306') or die ("Can't access DB");
 
 if (mysqli_connect_errno())//접근 실패 시
-{echo "Failed to connect to MySQL : " . mysqli_connect_error();
-exit();
-}
+{echo "Failed to connect to MySQL : " . mysqli_connect_error();}
 
 
 $sql_check = "SELECT * FROM members WHERE user_name='$user_name'";
 $request_name = mysqli_query($mysqli, $sql_check);
 
 //활동할 닉네임 중복 체크
-if (mysqli_num_rows($request_name) === 1){
+if (mysqli_num_rows($request_name) == 1){
     echo "이미 해당 닉네임이 존재합니다.";
 }
 
