@@ -7,7 +7,7 @@
     <div id="signup_wrap" class="wrap">
         <div>
             <h1> 회원 가입 </h1>
-            <form method="post" action="register.php"  class="form" onsubmit="return sendit()">
+            <form method="post" action="register.php" class="form" onsubmit="return sendit()">
                 <!-- <form action="register.php" method="post" class="form" onsubmit="return sendit()"> -->
                 <p><input type="text" name="user_name" placeholder="활동할 닉네임"></p>
                 <p><input type="text" name="email"  placeholder="ID(email)"></p>
@@ -23,7 +23,7 @@
                     <!-- <label for="health">Health <input type="checkbox" name="interest[]" id="health" value="Health"></label> -->
                     <!-- <label for="coding">Coding <input type="checkbox" name="interest[]" id="coding" value="Coding"></label> -->
                 <!-- </p> -->
-                <p><input type="submit" value="가입 신청" class="form_btn"></p>
+                <p><input type="submit" value="가입 신청" name = "submit" class="form_btn"></p>
             </form>
             <p class="signup_btn">이미 계정이 있으신가요? &nbsp; <a href="log_in.html">로그인</a></p>
         </div>

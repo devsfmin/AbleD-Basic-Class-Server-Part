@@ -9,7 +9,7 @@ $pwd = $_POST['pwd'];
 $pwcheck = $_POST['pwcheck'];
 
 //조건 달성 검사
-if ($pwd ! = $pwcheck){//비밀번호 확인 틀리다면
+if ($pwd != $pwcheck){//비밀번호 확인 틀리다면
     echo "비밀번호 확인 입력 문자가 서로 일치하지 않습니다!";
     echo "<a href=register.html> back page</a>";
     exit();
