@@ -52,7 +52,7 @@ if($result_register){
 //user_name(활동명), pwd, email 등의 개인 정보들이 테이블에 삽입되었는지 확인하기
 if($result_register){
     echo "성공적으로 가입이 되었습니다!";
-    header('Location: Files/register_suc.html');
+    header('Location: register_suc.html');
     mysqli_query($mysqli, "COMMIT");
 } else {
     mysqli_query($mysqli, "ROLLBACK");
