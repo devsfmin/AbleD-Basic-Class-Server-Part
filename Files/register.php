@@ -1,5 +1,8 @@
 <?php
 
+error_reporting( E_ALL );
+  ini_set( "display_errors", 1 );
+
 $user_name = $_POST['user_name'];
 $email = $_POST['email'];
 $pwd = $_POST['pwd'];
