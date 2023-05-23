@@ -38,7 +38,7 @@ if (mysqli_num_rows($request_name) == 1){
 }
 
 //transaction
-mysqli_query($mysqli, "Start transaction!");
+mysqli_query($mysqli, "Start transaction");
 
 $last_id =-1;
 $sql_register = "INSERT INTO new_table (user_name, pwd, email) VALUES ('$user_name','$pwd','$email')";
