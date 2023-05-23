@@ -23,7 +23,8 @@ $mysqli = mysqli_connect(//접근하기
 
 if (mysqli_connect_errno())//접근 실패 시
 {echo "Failed to connect to MySQL : " . mysqli_connect_error();
-exit(); }
+exit();
+}
 
 
 $sql_check = "SELECT * FROM members WHERE user_name='$user_name'";
