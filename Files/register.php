@@ -23,7 +23,10 @@ $mysqli = mysqli_connect(//접근하기
     'localhost', 'min', '0000', 'members','3306') or die ("Can't access DB");
 
 if (mysqli_connect_errno())//접근 실패 시
-{echo "Failed to connect to MySQL : " . mysqli_connect_error();}
+{
+    printf("Connection failed %s\n", mysqli_connect_error());
+exit();
+}
 
 
 $sql_check = "SELECT * FROM members WHERE user_name='$user_name'";
