@@ -41,7 +41,7 @@ if (mysqli_num_rows($request_name) == 1){
 mysqli_query($mysqli, "Start transaction!");
 
 $last_id =-1;
-$sql_register = "INSERT INTO members (user_name, pwd, email) VALUES ('$user_name','$pwd','$email')";
+$sql_register = "INSERT INTO new_table (user_name, pwd, email) VALUES ('$user_name','$pwd','$email')";
 $result_register = mysqli_query($mysqli, $sql_register);
 if($result_register){
     $last_id = mysqli_insert_id($mysqli);
