@@ -5,6 +5,7 @@ session_start();
 $email = $_POST['email'];
 $pwd = $_POST['pwd'];
 
+
 //입력사항 체크
 if ($email==NULL || $pwd==NULL){//정보 입력 누락 시
     echo "이메일과 비밀번호를 모두 입력해 주세요!";
