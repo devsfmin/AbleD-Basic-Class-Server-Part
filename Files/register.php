@@ -30,8 +30,8 @@ if (mysqli_connect_errno())//접근 실패 시
 
 $sql_check = "SELECT * FROM new_table WHERE user_name='$user_name'";
 $request_name = mysqli_query($mysqli, $sql_check);
-$sql_check2 = "SELECT * FROM new_table WHERE email='$email'";
-$request_email = mysqli_query($mysqli, $sql_check2)
+// $sql_check2 = "SELECT * FROM new_table WHERE email='$email'";
+// $request_email = mysqli_query($mysqli, $sql_check2)
 
 //활동할 닉네임 중복 체크
 if (mysqli_num_rows($request_name) === 1){
@@ -40,11 +40,11 @@ if (mysqli_num_rows($request_name) === 1){
     exit();
 }
 
-if (mysqli_num_rows($request_email) === 1){
-    echo "가입된 이메일이 존재합니다.";
-    echo "<a href=register.html> 돌아가기 </a>";
-    exit();
-}
+// if (mysqli_num_rows($request_email) === 1){
+    // echo "가입된 이메일이 존재합니다.";
+    // echo "<a href=register.html> 돌아가기 </a>";
+    // exit();
+// }
 
 //transaction
 mysqli_query($mysqli, "Start transaction");
