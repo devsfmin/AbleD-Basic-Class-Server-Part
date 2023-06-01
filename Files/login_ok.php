@@ -38,10 +38,10 @@ if (mysqli_num_rows($result) === 1){
             echo "Fail to Session Save";
         }
     } else {
-        echo "wrong id or pw";
+        echo "wrong id or pw : 2line";
     }
 } else {
-    echo "wrong id or pw";
+    echo "wrong id or pw : 3line";
 }
 
 mysqli_close($mysqli);
