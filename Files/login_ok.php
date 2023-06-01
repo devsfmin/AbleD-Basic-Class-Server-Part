@@ -33,7 +33,7 @@ if (mysqli_num_rows($result) === 1){
         if (isset($_SESSION['email'])) {
             echo "로그인 성공!";
             sleep(1);
-            header(Location: 'index.html');
+            header(Location: '/index.html');
         } else {
             echo "Fail to Session Save";
         }
