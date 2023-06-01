@@ -27,7 +27,7 @@ $result = mysqli_query($mysqli, $sql_check);
 
 //활동할 닉네임 중복 체크
 if (mysqli_num_rows($result) === 1){
-    $row = mysqli_fetch_array($result, MYSQL_ASSOC);
+    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
     if($row['pwd']==$pwd) {
         $_SESSION['email'] = $email;
         if (isset($_SESSION['email'])) {
@@ -38,10 +38,10 @@ if (mysqli_num_rows($result) === 1){
             echo "Fail to Session Save";
         }
     } else {
-        echo "wrong id or pw : 2line";
+        echo "비밀번호 또는 이메일이 일치하지 않습니다.";
     }
 } else {
-    echo "wrong id or pw : 3line";
+    echo "가입된 계정이 없습니다.";
 }
 
 mysqli_close($mysqli);
