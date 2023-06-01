@@ -33,15 +33,19 @@ if (mysqli_num_rows($result) === 1){
         if (isset($_SESSION['email'])) {
             echo "로그인 성공!";
             sleep(1);
-            header(Location: '/index.html');
+            header('Location: index.html');
         } else {
             echo "Fail to Session Save";
         }
     } else {
         echo "비밀번호 또는 이메일이 일치하지 않습니다.";
+        echo "<a href=log_in.html> 돌아가기 </a>";
+    exit();
     }
 } else {
     echo "가입된 계정이 없습니다.";
+    echo "<a href=log_in.html> 돌아가기 </a>";
+    exit();
 }
 
 mysqli_close($mysqli);
