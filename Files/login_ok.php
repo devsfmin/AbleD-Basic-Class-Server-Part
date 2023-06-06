@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// $user_name = $_POST['user_name'];
 $email = $_POST['email'];
 $pwd = $_POST['pwd'];
 
@@ -13,8 +12,8 @@ if ($email==NULL || $pwd==NULL){//정보 입력 누락 시
     exit();
 }
 
-//데이터 저장 및 유효성 검사
-$mysqli = mysqli_connect(//접근 하기
+//데이터 접근
+$conn = mysqli_connect(
     'localhost', 'min', '0000', 'members','3306');
 
 if (mysqli_connect_errno())//접근 실패 시
@@ -23,16 +22,16 @@ if (mysqli_connect_errno())//접근 실패 시
 
 
 $sql_check = "SELECT * FROM new_table WHERE email='$email'";
-$result = mysqli_query($mysqli, $sql_check);
+$result = mysqli_query($conn, $sql_check);
 
-//활동할 닉네임 중복 체크
-if (mysqli_num_rows($result) === 1){
-    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+//로그인 절차
+if (mysqli_num_rows($result) === 1){//result 변수는 DB에서 체크하는 email 정보를 담고있다.
+    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);//email과 거져온 데이터
     if($row['pwd']==$pwd) {
         $_SESSION['email'] = $email;
         if (isset($_SESSION['email'])) {
             echo "로그인 성공!";
-            sleep(1);
+            sleep(3);
             header('Location: index.html');
         } else {
             echo "Fail to Session Save";
@@ -48,6 +47,6 @@ if (mysqli_num_rows($result) === 1){
     exit();
 }
 
-mysqli_close($mysqli);
+mysqli_close($conn);
 
 ?>

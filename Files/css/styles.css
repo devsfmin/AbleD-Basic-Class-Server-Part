@@ -100,9 +100,29 @@ body {
 }
 .masthead .masthead-subheading {
   font-size: 1.25rem;
+  padding-top: 10px;
 }
 .masthead .masthead-avatar {
   width: 15rem;
+}
+
+.min-wrap{
+  width: 100%;
+  position: relative;
+}
+.min-wrap img {
+  width: 100%;
+  vertical-align: middle;
+}
+.min-text {
+  padding :5px 10px;
+  text-align: center;
+  font-size: 2.75rem;
+  line-height: 2.75rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate( -50%, -50% );
 }
 
 @media (min-width: 992px) {
