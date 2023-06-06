@@ -43,17 +43,18 @@
                     <!--우측 상단 status 코너-->
                     <form class="d-flex">
                         <div>
-                        <?php if (isset($_SESSION['email'])){
+                        
                             <button class="btn btn-outline-dark mx-1" button type ="button" onclick="location.href='log_in.html' ">
                             로그인
                         </button>
                         <button class="btn btn-outline-dark" button type="button" onclick="location.href='register.html' ">회원가입</button>
                         <!--<button class="btn btn-outline-dark" type="submit">회원가입</button>-->
                     </div>
-                        }else{
-
-                        }
-                        ?>
+                    <!-- 
+                    //{ 
+                        // }else{
+                        // }
+                        // ?>
                     </form>
                     
                         
