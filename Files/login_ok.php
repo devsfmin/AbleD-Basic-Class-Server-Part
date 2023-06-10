@@ -24,8 +24,8 @@ if (mysqli_connect_errno())//접근 실패 시
 $sql_check = "SELECT * FROM new_table WHERE email='$email'";
 $result = mysqli_query($conn, $sql_check);
 
-$sql_namepik = "SELECT * FROM new_table WHERE user_name='$user_name'";
-$namerst = mysqli_query($conn, $sql_namepik);
+// $sql_namepik = "SELECT * FROM new_table WHERE user_name='$user_name'";
+// $namerst = mysqli_query($conn, $sql_namepik);
 
 //로그인 절차
 if (mysqli_num_rows($result) === 1){//result 변수는 DB에서 체크하는 email 정보를 담고있다.
@@ -35,7 +35,8 @@ if (mysqli_num_rows($result) === 1){//result 변수는 DB에서 체크하는 ema
         if (isset($_SESSION['email'])) {//로그인 성공 시
             echo "로그인 성공!";
             session_start();
-            $_SESSION['user_name'] = $user_name;
+            // $_SESSION['user_name'] = $user_name;
+            $_SESSION['email'] = $email;
             header('Location: index.php');
         } else {//email
             echo "Fail to Session Save";
