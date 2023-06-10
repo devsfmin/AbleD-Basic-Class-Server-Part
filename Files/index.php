@@ -12,7 +12,6 @@
         <?php if(!isset($_SESSION['user_name'])) {
             echo "<p>로그인 가능</p>";} else {
                 $user_name = $_SESSION['user_name'];
-                $email = $_SESSION['email'];
                 echo "<p><strong>$user_name</strong>님, 안녕하세요? 로그인 된 상태에요.</p>"
             }
             ?>
