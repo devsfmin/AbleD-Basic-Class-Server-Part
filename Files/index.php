@@ -2,7 +2,7 @@
 
 <!-- session_start();
 //로그인된 계정 1차적 확인
-//
+//-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +12,6 @@
         <meta name="description" content=""/>
         <meta name="author" content="" />
         <title>Social Paper Main Page</title>
-         <!-- Google fonts-->
          <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
          <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Favicon-->
