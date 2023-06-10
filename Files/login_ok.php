@@ -35,7 +35,8 @@ if (mysqli_num_rows($result) === 1){//result 변수는 DB에서 체크하는 ema
         if (isset($_SESSION['email'])) {//로그인 성공 시
             echo "로그인 성공!";
             session_start();
-            $_SESSION['email'] = $email;
+            // $_SESSION['email'] = $email;
+            $user_name = mysqli_fetch_array($namerst, MYSQLI_ASSOC);
             $_SESSION['user_name'] = $user_name;
         } else {//email
             echo "Fail to Session Save";

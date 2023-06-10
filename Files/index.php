@@ -10,10 +10,11 @@
         <title>Social Paper Main Page</title>
 
         <?php
-        if(!isset($_SESSION['email']) || !isset($_SESSION['user_name'])) {
+        if(!isset($_SESSION['user_name'])) {
+            //!isset($_SESSION['email']) || //
             echo "<p>로그인 가능</p>";} else {
+                // $email = $_SESSION['email'];
                 $user_name = $_SESSION['user_name'];
-                $email = $_SESSION['email'];
                 echo "<p><strong>$user_name</strong>님, 안녕하세요? 로그인 된 상태에요.</p>";
             }
             ?>
