@@ -9,7 +9,7 @@
         
         <title>Social Paper Main Page</title>
 
-        <?php if(isset($_SESSION['user_name'])) {
+        <?php if(!isset($_SESSION['user_name'])) {
             echo "<p>로그인 가능</p>";} else {
                 $user_name = $_SESSION['user_name'];
                 $email = $_SESSION['email'];
