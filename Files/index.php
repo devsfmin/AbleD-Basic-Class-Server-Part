@@ -1,8 +1,8 @@
-<?php
 
-session_start();
+
+<!-- session_start();
 //로그인된 계정 1차적 확인
-?>
+//
 
 <!DOCTYPE html>
 <html lang="en">
