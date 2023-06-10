@@ -32,7 +32,7 @@ if (mysqli_num_rows($result) === 1){//result 변수는 DB에서 체크하는 ema
         if (isset($_SESSION['email'])) {
             echo "로그인 성공!";
             sleep(3);
-            header('Location: index.html');
+            header('Location: index.php');
         } else {
             echo "Fail to Session Save";
         }
