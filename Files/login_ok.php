@@ -27,21 +27,21 @@ $result = mysqli_query($conn, $sql_check);
 //로그인 절차
 if (mysqli_num_rows($result) === 1){//result 변수는 DB에서 체크하는 email 정보를 담고있다.
     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);//email과 거져온 데이터
-    if($row['pwd']==$pwd) {
+    if($row['pwd']==$pwd) {//password
         $_SESSION['email'] = $email;
-        if (isset($_SESSION['email'])) {
+        if (isset($_SESSION['email'])) {//email
             echo "로그인 성공!";
             sleep(3);
             header('Location: index.php');
-        } else {
+        } else {//email
             echo "Fail to Session Save";
         }
-    } else {
+    } else {//password 불일치
         echo "비밀번호 또는 이메일이 일치하지 않습니다.";
         echo "<a href=log_in.html> 돌아가기 </a>";
     exit();
     }
-} else {
+} else {//email 계정 확인 불가 시
     echo "가입된 계정이 없습니다.";
     echo "<a href=log_in.html> 돌아가기 </a>";
     exit();

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php session_start();?>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -8,6 +9,13 @@
         
         <title>Social Paper Main Page</title>
 
+        <?php if(isset($_SESSION['user_name'])) {
+            echo "<p>로그인 가능</p>";} else {
+                $user_name = $_SESSION['user_name'];
+                $email = $_SESSION['email'];
+                echo "<p><strong>$user_name</strong>님, 안녕하세요? 로그인 된 상태에요.</p>"
+            }
+            ?>
         <!-- 폰트 관련 -->
          <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
          <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
