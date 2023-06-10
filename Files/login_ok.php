@@ -37,7 +37,6 @@ if (mysqli_num_rows($result) === 1){//result 변수는 DB에서 체크하는 ema
             session_start();
             // $_SESSION['user_name'] = $user_name;
             $_SESSION['email'] = $email;
-            header('Location: index.php');
         } else {//email
             echo "Fail to Session Save";
         }
@@ -52,6 +51,7 @@ if (mysqli_num_rows($result) === 1){//result 변수는 DB에서 체크하는 ema
     exit();
 }
 
-mysqli_close($conn);
+// mysqli_close($conn);
 
 ?>
+<meta http-equiv="refresh" content="0;url=index.php" />
