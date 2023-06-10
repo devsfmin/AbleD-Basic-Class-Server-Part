@@ -34,11 +34,11 @@ if (mysqli_num_rows($result) === 1){
         $_SESSION['email'] = $email;
         if (isset($_SESSION['email'])) {//로그인 성공 시
             $user_name = mysqli_fetch_array($namerst, MYSQLI_ASSOC);
-            echo "<p><strong>$user_name</strong>님, 로그인 성공!</p>";
-            sleep(3);
+            // echo "<p><strong>$user_name</strong>님, 로그인 성공!</p>";
+            // sleep(3);
             session_start();
             $_SESSION['email'] = $email;
-            $_SESSION['user_name'] = $user_name;
+            // $_SESSION['user_name'] = $user_name;
         } else {//email
             echo "Fail to Session Save";
         }
