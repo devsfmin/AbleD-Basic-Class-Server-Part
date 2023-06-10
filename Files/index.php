@@ -9,10 +9,11 @@
         
         <title>Social Paper Main Page</title>
 
-        <?php if(!isset($_SESSION['email'])) {
+        <?php
+        if(!isset($_SESSION['email'])) {
             echo "<p>로그인 가능</p>";} else {
                 $email = $_SESSION['email'];
-                echo "<p><strong>$email</strong>님, 안녕하세요? 로그인 된 상태에요.</p>"
+                echo "<p><strong>$email</strong>님, 안녕하세요? 로그인 된 상태에요.</p>";
             }
             ?>
         <!-- 폰트 관련 -->
