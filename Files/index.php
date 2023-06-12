@@ -51,19 +51,19 @@
                     <form class="d-flex">
                         <div>
                             <?php
-                            if(!isset($_SESSION['email'])){//세션 x 의 경우
-                            ?>
+                            if(!isset($_SESSION['email'])){ /* 세션 x 의 경우 */ ?>
                             <button class="btn btn-outline-dark mx-1" button type ="button" id="loginbtn" onclick="location.href='log_in.html' ">
                             로그인</button>
-                            <? } else{$email = $_SESSION['email']; // 가 아닌 세션 o 의 경우
+                            <?php } else{
+                                $email = $_SESSION['email']; /* 가 아닌 세션 o 의 경우 */
                             // $user_name = $_SESSION['user_name'];
                             // echo "<p><strong>$email</strong>님, 안녕하세요? 로그인 된 상태에요.</p>";
                             // echo "<p><strong>$user_name</strong>님, 안녕하세요? 로그인 된 상태에요.</p>";
                             // echo "<a href=\"logout.php\">[로그아웃]</a></p>";
                             ?>
-                            <button class="btn btn-outline-dark mx-1" button type ="button" id="loginbtn" onclick="location.href='logout.php' ">
+                            <button class="btn btn-outline-dark mx-1" button type ="button" id="logoutbtn" onclick="location.href='logout.php' ">
                             로그아웃</button>
-                        <? }
+                        <?php };
                         ?>
                             <!-- 로그인 -->
                             <!-- <i class="bi-heart-fill me-1" style="color:lightcoral"></i> -->
