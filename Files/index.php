@@ -114,7 +114,7 @@
             <!-- Personal Section -->
             <section class="py-5">
                 <div class="container px-4 px-lg-5 mt-5">
-                    <h2 class="masthead-heading text-uppercase mb-0"> <?php echo $email; ?> 님. 안녕하세요! </h2>
+                    <h3 class="masthead-heading text-uppercase mb-0"> <?php echo $email; ?> 의 개인 페이지 </h3>
                 </div>
             <div class="container px-4 px-lg-5 mt-5">
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
