@@ -62,14 +62,13 @@
                             // echo "<a href=\"logout.php\">[로그아웃]</a></p>";
                             ?>
                             <button class="btn btn-outline-dark mx-1" button type ="button" id="logoutbtn" onclick="location.href='logout.php' ">로그아웃</button>
-                            <button class="btn btn-outline-dark" button type="button" onclick="location.href='register.html' ">넣기</button>
+                            <button class="btn btn-outline-dark" button type="button" onclick="location.href='register.html' ">
+                            <i class="bi-heart-fill me-1" style="color:lightcoral"></i>
+                            <span class="badge bg-dark text-white ms-1 rounded-pill">2</span>
+                        </button>
                         <?php };
                         ?>
-                            <!-- 로그인 -->
-                            <i class="bi-heart-fill me-1" style="color:lightcoral"></i>
-                            <!-- 새 소식 -->
-                            <span class="badge bg-dark text-white ms-1 rounded-pill">2</span>
-                        <button class="btn btn-outline-dark" button type="button" onclick="location.href='register.html' ">회원가입</button>
+                        
                     </div>
                     </form>
 
