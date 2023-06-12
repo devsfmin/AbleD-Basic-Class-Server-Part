@@ -110,6 +110,7 @@
 
         <?php }else{
             $email = $_SESSION['email']; /* 가 아닌 세션 o 의 경우 */ ?>
+                        
             <!-- Personal Section -->
             <section class="py-5">
             <div class="container px-4 px-lg-5 mt-5">
@@ -292,6 +293,11 @@
         </section>
 
         <?php }; ?>
+
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Min Web Server Project Jun 2023</p></div>
+        </footer>
 
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
