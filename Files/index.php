@@ -60,7 +60,10 @@
                     <form class="d-flex">
                         <div>
                             <button class="btn btn-outline-dark mx-1" button type ="button" onclick="location.href='log_in.html' ">
-                            로그인
+                            <?php
+                            if(!isset($_SESSION['email'])) { 로그인 } else { 로그아웃 }
+                            ?>
+                            <!-- 로그인 -->
                             <!-- <i class="bi-heart-fill me-1" style="color:lightcoral"></i> -->
                             <!-- 새 소식 -->
                             <!-- <span class="badge bg-dark text-white ms-1 rounded-pill">2</span> -->
