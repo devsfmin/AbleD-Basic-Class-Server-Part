@@ -9,18 +9,18 @@
         
         <title>Social Paper Main Page</title>
 
-        <?php
-        if(!isset($_SESSION['email'])) {
+        <!-- php
+        // if(!isset($_SESSION['email'])) {
             //!isset($_SESSION['user_name']) || //
-            echo "<p>로그인 가능</p>";} else {
-                $email = $_SESSION['email'];
+            // echo "<p>로그인 가능</p>";} else {
+                // $email = $_SESSION['email'];
                 // $user_name = $_SESSION['user_name'];
-                echo "<p><strong>$email</strong>님, 안녕하세요? 로그인 된 상태에요.</p>";
+                // echo "<p><strong>$email</strong>님, 안녕하세요? 로그인 된 상태에요.</p>";
                 // echo "<p><strong>$user_name</strong>님, 안녕하세요? 로그인 된 상태에요.</p>";
-                echo "<a href=\"logout.php\">[로그아웃]</a></p>";
-            }
-            ?>
-        <!-- 폰트 관련 -->
+                // echo "<a href=\"logout.php\">[로그아웃]</a></p>";
+            // }
+            // 
+        폰트 관련 -->
          <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
          <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         
