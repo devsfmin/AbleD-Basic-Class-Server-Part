@@ -112,10 +112,10 @@
             $email = $_SESSION['email']; /* 가 아닌 세션 o 의 경우 */ ?>
                         
             <!-- Personal Section -->
-            <section class="py-5">
-                
-                <p> <?php echo $email; ?> 님. 안녕하세요! </p>
-                
+            <section class="py-2">
+                <div class="min-text">
+                    <h2> <?php echo $email; ?> 님. 안녕하세요! </h2>
+                </div>
             <div class="container px-4 px-lg-5 mt-5">
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                     <div class="col mb-5">
