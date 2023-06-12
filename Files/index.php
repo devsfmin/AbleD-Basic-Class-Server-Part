@@ -9,8 +9,6 @@
         
         <title>Social Paper Main Page</title>
 
-        
-
         <!--폰트 관련 -->
          <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
          <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
@@ -62,9 +60,9 @@
                             // echo "<a href=\"logout.php\">[로그아웃]</a></p>";
                             ?>
                             <button class="btn btn-outline-dark mx-1" button type ="button" id="logoutbtn" onclick="location.href='logout.php' ">로그아웃</button>
-                            <button class="btn btn-outline-dark" button type="button" onclick="location.href='register.html' ">
+                            <button class="btn btn-outline-dark" button type="button" onclick="location.href='' ">
                             <i class="bi-heart-fill me-1" style="color:lightcoral"></i>
-                            <span class="badge bg-dark text-white ms-1 rounded-pill">2</span>
+                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
                         </button>
                         <?php };
                         ?>
@@ -77,6 +75,8 @@
         </nav>
 
         <!-- Masthead-->
+        <?php
+        if(!isset($_SESSION['email'])){ /* 세션 x 의 경우 */ ?>
         <header class="masthead text-white text-center">
             <!-- linear-gradient(to left, #f857a6, #ff5858) -->
             <div class="container d-flex align-items-center flex-column"> 
@@ -94,6 +94,10 @@
                 <p class="masthead-subheading font-weight-light">새로운 소셜 네트워크, 소셜 페이퍼에 오신 것을 환영합니다!</p>
             </div>
         </header>
+        <?php }else{
+            $email = $_SESSION['email']; /* 가 아닌 세션 o 의 경우 */ ?>
+        <p>asd</p>
+        <?php }; ?>
 
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
