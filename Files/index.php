@@ -9,18 +9,9 @@
         
         <title>Social Paper Main Page</title>
 
-        <!-- php
-        // if(!isset($_SESSION['email'])) {
-            //!isset($_SESSION['user_name']) || //
-            // echo "<p>로그인 가능</p>";} else {
-                // $email = $_SESSION['email'];
-                // $user_name = $_SESSION['user_name'];
-                // echo "<p><strong>$email</strong>님, 안녕하세요? 로그인 된 상태에요.</p>";
-                // echo "<p><strong>$user_name</strong>님, 안녕하세요? 로그인 된 상태에요.</p>";
-                // echo "<a href=\"logout.php\">[로그아웃]</a></p>";
-            // }
-            // 
-        폰트 관련 -->
+        
+
+        <!--폰트 관련 -->
          <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
          <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         
@@ -59,10 +50,21 @@
                     <!--우측 상단 status 코너-->
                     <form class="d-flex">
                         <div>
-                            <button class="btn btn-outline-dark mx-1" button type ="button" onclick="location.href='log_in.html' ">
                             <?php
-                            if(!isset($_SESSION['email'])) { 로그인 } else { 로그아웃 }
+                            if(!isset($_SESSION['email'])){//세션 x 의 경우
                             ?>
+                            <button class="btn btn-outline-dark mx-1" button type ="button" id="loginbtn" onclick="location.href='log_in.html' ">
+                            로그인</button>
+                            <? } else{$email = $_SESSION['email']; // 가 아닌 세션 o 의 경우
+                            // $user_name = $_SESSION['user_name'];
+                            // echo "<p><strong>$email</strong>님, 안녕하세요? 로그인 된 상태에요.</p>";
+                            // echo "<p><strong>$user_name</strong>님, 안녕하세요? 로그인 된 상태에요.</p>";
+                            // echo "<a href=\"logout.php\">[로그아웃]</a></p>";
+                            ?>
+                            <button class="btn btn-outline-dark mx-1" button type ="button" id="loginbtn" onclick="location.href='logout.php' ">
+                            로그아웃</button>
+                        <? }
+                        ?>
                             <!-- 로그인 -->
                             <!-- <i class="bi-heart-fill me-1" style="color:lightcoral"></i> -->
                             <!-- 새 소식 -->
