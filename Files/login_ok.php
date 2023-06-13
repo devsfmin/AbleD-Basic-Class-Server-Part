@@ -24,6 +24,10 @@ if (mysqli_connect_errno())//접근 실패 시
 $sql_check = "SELECT * FROM new_table WHERE email='$email'";//DB에서 email 정보 체크
 $result = mysqli_query($conn, $sql_check);//결과값은 해당 이메일 정보
 
+$username = "SELECT user_name FROM new_table WHERE email ='$email'";//DB에서 이름을 선택
+$Nrst = $dbConnect->query($username);//쿼리 송신
+$memberInfo = $Nrst->fetch_array(MYSQLI_ASSOC);
+
 //로그인 절차
 if (mysqli_num_rows($result) === 1){
     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);//email 데이터를 row 변수에 담아준다
@@ -37,6 +41,7 @@ if (mysqli_num_rows($result) === 1){
             // sleep(3);
             session_start();
             $_SESSION['email'] = $email;
+            $_SESSION['user_name'] = $memberInfo['user_name'];
             // $_SESSION['user_name'] = $user_name;
         } else {//email
             echo "Fail to Session Save";
