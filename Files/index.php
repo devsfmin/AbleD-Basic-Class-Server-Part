@@ -34,7 +34,7 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><a class="nav-link" href="mainfeed.html">피드 모아보기</a></li>
+                        <li class="nav-item"><a class="nav-link" href="mainfeed.php">피드 모아보기</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">웹사이트 소개</a></li>
                     </ul>
                     <?php }else{
@@ -44,9 +44,9 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><a class="nav-link" href="mainfeed.html">피드 모아보기</a></li>
+                        <li class="nav-item"><a class="nav-link" href="mainfeed.php">피드 모아보기</a></li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">팔로잉 태그</a>
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#!" role="button" data-bs-toggle="dropdown" aria-expanded="false">팔로잉 태그</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="#!">#달팽이</a></li>
                                 <li><a class="dropdown-item" href="#!">#고양이</a></li>
@@ -118,10 +118,28 @@
 
         <?php }else{
             $username = $_SESSION['user']; /* 가 아닌 세션 o 의 경우 */?>
-                        
+            <header class="masthead text-white text-center">
+        <!-- linear-gradient(to left, #f857a6, #ff5858) -->
+        <div class="container d-flex align-items-center flex-column"> 
+            <!-- Masthead Avatar Image-->
+            <img class="masthead-avatar mb-5" src="assets/mainp_logo_s.png" alt="..." />
+            <!-- Masthead Heading-->
+            <h1 class="masthead-heading text-uppercase mb-0">Social Paper</h1>
+            <!-- Icon Divider-->
+            <div class="divider-custom divider-light">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+                </div>
+                <!-- Masthead Subheading-->
+                <p class="masthead-subheading font-weight-light"><?php echo $username; ?>님, 환영합니다!</p>
+                <br><p>어떤 하루를 보내셨는지 작성하러 가 볼까요?</p>
+                <button>이동</button>
+            </div>
+        </header>
             <!-- Personal Section -->
                 <div class="container px-4 px-lg-5 mt-5">
-                    <p class="masthead-subheading font-weight-light"> <?php echo $username; ?> 의 개인 페이지 </p>
+                    <p class="masthead-subheading font-weight-light"> <?php echo $username; ?>의 개인 페이지 </p>
                 </div>
             <div class="container px-4 px-lg-5 mt-5">
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
