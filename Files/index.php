@@ -49,16 +49,12 @@
                     <form class="d-flex">
                         <div>
                             <?php
-                            if(!isset($_SESSION['email'])){ /* 세션 x 의 경우 */ ?>
+                            if(!isset($_SESSION['user'])){ /* 세션 x 의 경우 */ ?>
                             <button class="btn btn-outline-dark mx-1" button type ="button" id="loginbtn" onclick="location.href='log_in.html' ">로그인</button>
                             <button class="btn btn-outline-dark" button type="button" onclick="location.href='register.html' ">회원가입</button>
                             <?php } else{
-                                $email = $_SESSION['email']; /* 가 아닌 세션 o 의 경우 */
-                            // $user_name = $_SESSION['user_name'];
-                            // echo "<p><strong>$email</strong>님, 안녕하세요? 로그인 된 상태에요.</p>";
-                            // echo "<p><strong>$user_name</strong>님, 안녕하세요? 로그인 된 상태에요.</p>";
-                            // echo "<a href=\"logout.php\">[로그아웃]</a></p>";
-                            ?>
+                                $username = $_SESSION['user']; /* 가 아닌 세션 o 의 경우 */
+                                ?>
                             <button class="btn btn-outline-dark mx-1" button type ="button" id="logoutbtn" onclick="location.href='logout.php' ">로그아웃</button>
                             <button class="btn btn-outline-dark" button type="button" onclick="location.href='' ">
                             <i class="bi-heart-fill me-1" style="color:lightcoral"></i>
@@ -76,7 +72,7 @@
 
         <!-- Masthead-->
         <?php
-        if(!isset($_SESSION['email'])){ /* 세션 x 의 경우 */ ?>
+        if(!isset($_SESSION['user'])){ /* 세션 x 의 경우 */ ?>
 
         <header class="masthead text-white text-center">
         <!-- linear-gradient(to left, #f857a6, #ff5858) -->
@@ -109,11 +105,11 @@
         </div>
 
         <?php }else{
-            $email = $_SESSION['email']; /* 가 아닌 세션 o 의 경우 */ ?>
+            $username = $_SESSION['user']; /* 가 아닌 세션 o 의 경우 */?>
                         
             <!-- Personal Section -->
                 <div class="container px-4 px-lg-5 mt-5">
-                    <p class="masthead-subheading font-weight-light"> <?php echo $email; ?> 의 개인 페이지 </p>
+                    <p class="masthead-subheading font-weight-light"> <?php echo $username; ?> 의 개인 페이지 </p>
                 </div>
             <div class="container px-4 px-lg-5 mt-5">
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">

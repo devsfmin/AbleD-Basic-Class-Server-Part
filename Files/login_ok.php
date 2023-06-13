@@ -21,27 +21,26 @@ if (mysqli_connect_errno())//접근 실패 시
     exit(); }
 
 
-$sql_check = "SELECT * FROM new_table WHERE email='$email'";//DB에서 email 정보 체크
-$result = mysqli_query($conn, $sql_check);//결과값은 해당 이메일 정보
+$sql_check = "SELECT * FROM new_table WHERE email='$email'";//DB new_table에서 email 정보와 post 된 email 값 비교해서 같은 친구 선택하기
+$result = mysqli_query($conn, $sql_check);//결과값
 
-$username = "SELECT user_name FROM new_table WHERE email ='$email'";//DB에서 이름을 선택
-$Nrst = $dbConnect->query($username);//쿼리 송신
-$memberInfo = $Nrst->fetch_array(MYSQLI_ASSOC);
+// $username = "SELECT user_name FROM new_table WHERE email='$email'";//DB에서 이름을 선택
+// $Nrst = $dbConnect->query($username);//쿼리 송신
+// $memberInfo = $Nrst->fetch_array(MYSQLI_ASSOC);
 
 //로그인 절차
-if (mysqli_num_rows($result) === 1){
-    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);//email 데이터를 row 변수에 담아준다
-    if($row['pwd']==$pwd) {//email 데이터가 담긴 row 변수의 password와, 로그인 입력창에서 post한 password와 일치하는지 확인한다
-        $_SESSION['email'] = $email;
-        if (isset($_SESSION['email'])) {//로그인 성공 시
+if (mysqli_num_rows($result) === 1){//선택한 db결과값이 존재하는 경우(=email계정 존재 확인 여부) 진행한다
+    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);//계정 db를 row 변수에 담아준다
+    if($row['pwd']==$pwd) {//row 변수에 있는 pwd db가 post된 입력 pwd와 같을 경우 진행한다
+        $_SESSION['user'] = $row['user_name'];//
+        if (isset($_SESSION['user'])) {//로그인 성공
             // $sql_check2 = "SELECT user_name FROM new_table";
             // $namerst = mysqli_query($conn, $sql_check2)
             // $user_name = mysqli_fetch_array($namerst, MYSQLI_ASSOC);
             // echo "<p><strong>$user_name</strong>님, 로그인 성공!</p>";
             // sleep(3);
-            session_start();
-            $_SESSION['email'] = $email;
-            $_SESSION['user_name'] = $memberInfo['user_name'];
+            session_start();//세션 시작
+            $_SESSION['user'] = $row['user_name'];//
             // $_SESSION['user_name'] = $user_name;
         } else {//email
             echo "Fail to Session Save";
