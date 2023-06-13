@@ -132,8 +132,8 @@
                 <div class="divider-custom-line"></div>
                 </div>
                 <!-- Masthead Subheading-->
-                <p class="masthead-subheading font-weight-light"><?php echo $username; ?>님, 환영합니다!</p>
-                <br><p>어떤 하루를 보내셨는지 작성하러 가 볼까요?</p>
+                <p class="masthead-subheading font-weight-light"><?php echo $username; ?>님, 환영합니다!
+                <br>어떤 하루를 보내셨는지 작성하러 가 볼까요?</p>
                 <button>이동</button>
             </div>
         </header>
