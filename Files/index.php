@@ -24,26 +24,38 @@
     </head>
 
     <body>
-        <!-- 상단 네비 (Navigation) 코너-->
+        <!-- NO session 네비 (Navigation) 코너 : index logo / all DB contents / introducing-->
+        <!-- IF session is exist : index logo / all DB contents / myfeedset? / following tag-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#!">Social Paper</a>
+                <?php 
+                if(!isset($_SESSION['user'])){ /* 세션 x 의 경우 */ ?>
+                <a class="navbar-brand" href="index.php">Social Paper</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li class="nav-item"><a class="nav-link" href="mainfeed.html">피드 모아보기</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">웹사이트 소개</a></li>
+                    </ul>
+                    <?php }else{
+                        $username = $_SESSION['user']; /* 가 아닌 세션 o 의 경우 */
+                        ?>
+                        <a class="navbar-brand" href="index.php">Social Paper</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                         <li class="nav-item"><a class="nav-link" href="mainfeed.html">피드 모아보기</a></li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">주제</a>
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">팔로잉 태그</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#!">친구 피드</a></li>
+                                <li><a class="dropdown-item" href="#!">#달팽이</a></li>
+                                <li><a class="dropdown-item" href="#!">#고양이</a></li>
                                 <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="#!">#달팽이 피드</a></li>
-                                <li><a class="dropdown-item" href="#!">#고양이 피드</a></li>
+                                <li><a class="dropdown-item" href="#!">팔로잉 피드 관리</a></li>
                             </ul>
                         </li>
-                        <!--웹사이트 소개-->
-                        <li class="nav-item"><a class="nav-link" href="#!">웹사이트 소개</a></li>
                     </ul>
+                    <?php }; ?>
 
                     <!--우측 상단 status 코너-->
                     <form class="d-flex">
