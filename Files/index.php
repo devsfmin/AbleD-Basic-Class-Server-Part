@@ -134,7 +134,8 @@
                 <!-- Masthead Subheading-->
                 <p class="masthead-subheading font-weight-light"><?php echo $username; ?>님, 환영합니다!
                 <br>어떤 하루를 보내셨는지 작성하러 가 볼까요?</p>
-                <button class="btn btn-outline-dark mx-1" button type ="button" style="background-color: white;" onclick="location.href='posting.php'">이동</button>
+                <button class="btn btn-outline-dark mx-2" button type ="button" onclick="location.href='posting.php'">이동</button>
+                <!--style="background-color: white;"-->
             </div>
         </header>
             <!-- Personal Section -->
