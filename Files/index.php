@@ -130,14 +130,15 @@
                 <div class="divider-custom-line"></div>
                 <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                 <div class="divider-custom-line"></div>
-                </div>
-                <!-- Masthead Subheading-->
-                <p class="masthead-subheading font-weight-light"><?php echo $username; ?>님, 환영합니다!
-                <br>어떤 하루를 보내셨는지 작성하러 가 볼까요?</p>
-                <button class="btn btn-outline-dark mx-2" button type ="button" onclick="location.href='posting.php'">이동</button>
-                <!--style="background-color: white;"-->
             </div>
+                <!-- Masthead Subheading-->
+            <p class="masthead-subheading font-weight-light"><?php echo $username; ?>님, 환영합니다!
+            <br>어떤 하루를 보내셨는지 작성하러 가 볼까요?</p>
+            <button class="btn btn-outline-dark mx-auto" button type ="button" onclick="location.href='posting.php'">글 작성하러 가기</button>
+            <!--style="background-color: white;"-->
+        </div>
         </header>
+
             <!-- Personal Section -->
                 <div class="container px-4 px-lg-5 mt-5">
                     <p class="masthead-subheading font-weight-light"> <?php echo $username; ?>의 개인 페이지 </p>
