@@ -173,13 +173,14 @@ body {
 	margin-top:10px;
 }
 .bt_se {
-	margin-top:20px;
-  margin-bottom: 20px;
+	/* margin-top:20px; */
+  /* margin-bottom: 20px; */
+	text-align:left;
 }
-.bt_se button {
-	width:100px;
-	height:25px;
-}
+/* .bt_se button { */
+	/* width:100px; */
+	/* height:25px; */
+/* } */
 
 @media (min-width: 992px) {
   .masthead {
