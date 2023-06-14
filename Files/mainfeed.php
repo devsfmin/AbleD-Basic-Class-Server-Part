@@ -177,7 +177,7 @@
                 </div>
             </div>
             <div class="container px-4 px-lg-5 my-3 mb-2">
-                <div class="text-center">
+                <div class="text-center align-center">
                     <p class="fs-6 text-black-50 mb-0">
                     <?php
                     if($page <= 1){ //만약 page가 1이면
