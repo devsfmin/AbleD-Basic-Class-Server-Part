@@ -18,10 +18,9 @@ if(!isset($_SESSION['user'])){ /* 세션 x 의 경우 */
 $wr_date = date('Y-m-d');
 
 //조건 달성 검사(1)
-if ($title==NULL || $content==NULL){//제목 또는 내용이 없을 경우
-    echo "<script>alert(\"제목 또는 내용을 입력해 주세요!\");</script>";
-    exit();
-}
+//if ($title==NULL || $content==NULL){//제목 또는 내용이 없을 경우
+    // echo "<script>alert(\"제목 또는 내용을 입력해 주세요!\");</script>";
+    // exit();}
 
 //데이터 접근
 $conn = mysqli_connect(

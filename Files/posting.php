@@ -71,10 +71,10 @@
                         <textarea id="in_content" name="content"  placeholder="작성할 내용" required></textarea>
                     </div>
                     <div id="image_url">
-                        <textarea id="imgurl" name="imgurl" placeholder="이미지 URL" required></textarea>
+                        <textarea id="imgurl" name="imgurl" placeholder="이미지 URL"></textarea>
                     </div>
                     <div id="in_tag">
-                        <textarea id="in_tag" name="tag" placeholder="#해시태그" required></textarea>
+                        <textarea id="in_tag" name="tag" placeholder="#해시태그"></textarea>
                     </div>
                     <div class="bt_se">
                         <button class="btn btn-outline-dark mx-auto" button type ="submit">작성 완료</button>
