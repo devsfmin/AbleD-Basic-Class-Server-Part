@@ -4634,7 +4634,6 @@ textarea.form-control-lg {
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
-  object-fit: cover;
 }
 .card > hr {
   margin-right: 0;
@@ -4713,7 +4712,7 @@ textarea.form-control-lg {
 }
 
 .card-img-overlay {
-  position: absolute;
+  position:fixed;
   top: 0;
   right: 0;
   bottom: 0;
