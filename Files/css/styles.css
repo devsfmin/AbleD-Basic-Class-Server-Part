@@ -4722,7 +4722,8 @@ textarea.form-control-lg {
 }
 
 .card-img-top{
-  max-height:100px;
+  height:300px;
+  max-height:100%;
 }
 
 .card-img,
