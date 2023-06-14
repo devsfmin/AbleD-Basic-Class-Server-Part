@@ -172,7 +172,7 @@
                 </div>
             </div>
             <div id="page_num">
-                <ul>
+                <p>
                 <?php
                 if($page <= 1){ //만약 page가 1이면
                 echo "<li><b>◀︎</b></li>"; //처음임
@@ -204,7 +204,7 @@
                 }else{
                 echo "<li><a href='?page=$total_page'>▶︎</a></li>"; //아니라면 마지막글자에 total_page를 링크한다.
                 }?>
-      </ul>
+      </p>
     </div>
 
         <!-- Footer-->
