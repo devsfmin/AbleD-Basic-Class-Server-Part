@@ -176,12 +176,12 @@ body {
 .bt_se {
 	margin-top:20px;
   margin-bottom: 20px;
-	text-align:left;
+	text-align:center;
 }
-.bt_se button {
-	width:100px;
-	height:30px;
-}
+/* .bt_se button { */
+	/* width:100px; */
+	/* height:25px; */
+/* } */
 
 @media (min-width: 992px) {
   .masthead {
