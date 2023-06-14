@@ -68,10 +68,10 @@
                     </div>
                     <div class="wi_line"></div>
                     <div id="in_content">
-                        <textarea name="content" id="ucontent" placeholder="작성할 내용" required></textarea>
+                        <textarea name="in_content" id="in_content" placeholder="작성할 내용" required></textarea>
                     </div>
                     <div id="in_tag">
-                        <textarea name="tag" id="tag" placeholder="#해시태그" required></textarea>
+                        <textarea name="in_tag" id="in_tag" placeholder="#해시태그" required></textarea>
                     </div>
                     <div class="bt_se">
                         <button class="btn btn-outline-dark mx-auto" button type ="button" onclick="location.href='write_ok.php'">작성 완료</button>
