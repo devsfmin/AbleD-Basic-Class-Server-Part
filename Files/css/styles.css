@@ -165,7 +165,7 @@ body {
   font:15px;
   color:#333;
   width: 700px;
-  height: 80px;
+  height: 30px;
   resize: none;
 }
 #in_tag input {
@@ -173,9 +173,9 @@ body {
 	margin-top:10px;
 }
 .bt_se {
-	/* margin-top:20px; */
-  /* margin-bottom: 20px; */
-	text-align:left;
+	margin-top:10px;
+  margin-bottom: 20px;
+	text-align:right;
 }
 /* .bt_se button { */
 	/* width:100px; */
