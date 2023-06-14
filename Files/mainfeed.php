@@ -17,12 +17,6 @@
     </head>
 
     <?php
-    //현재 페이지
-    $page = isset($_GET['page']) ? $_GET['page']:1;
-    //1페이지당 보여줄 데이터 갯수
-    $list_num = 5;
-    //한 블럭당 페이지 수
-    $page_num = 5;
     
     //데이터 접근
     $conn = mysqli_connect(
@@ -31,9 +25,6 @@
     if (mysqli_connect_errno())//접근 실패 시
     { printf("Connection failed %s\n", mysqli_connect_error());
     exit(); }
-
-    //전체 페이지 갯수
-    // $total_page=ceil($total/$list_num)
     ?>
 
     <body>
@@ -96,7 +87,7 @@
             </div>
         </nav>
     
-        <!-- Personal Section -->
+        <!-- Board Section -->
             <div class="container px-4 px-lg-5 mt-5">
                 <!-- <p class="masthead-subheading font-weight-light"> -->
                     <!--</?php echo $username;?> -->
@@ -106,7 +97,28 @@
             <div class="container px-4 px-lg-5 mt-5">
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                     <?php
-                    $listup = "SELECT * from board order by postnum desc";
+                    //현재 페이지
+                    if(isset($_GET['page'])){
+                        $page = $_GET['page'];
+                    }else{$page = 1;}
+                    
+                    //게시판 총 데이터 갯수
+                    $sql = query("SELECT * from board");
+                    $row_num = mysqli_num_rows($sql);
+                    //1페이지당 보여줄 데이터 갯수
+                    $list_sz = 8;
+                    
+                    $block_sz = 5;//한 블럭당 페이지 수
+                    $block_num = ceil($page/$block_sz); // 현재 페이지 블록 구하기
+                    $block_start = (($block_num - 1) * $block_sz) +1; // 블록 시작 번호
+                    $block_end = $block_start + $block_sz -1; //블록 마지막 번호
+                    
+                    $total_page = ceil($row_num/$list_sz);//전체 페이지 갯수
+                    if($block_end > $total_page) $block_end = $total_page; //블록 마지막 번호가 패아자수보다 많다면 마지막 번호는 페이지 수
+                    $total_block = ceil($total_page/$block_sz);//블럭 총 갯수
+                    $start_num = ($page-1) * $list_sz;//시작 번호 (page-1)에 list 사이즈 곱하기
+
+                    $listup = "SELECT * from board order by postnum desc limit $start_num,$list_sz";
                     $result = mysqli_query($conn, $listup);
                     while($board = mysqli_fetch_assoc($result))
                         { //title 변수처리하기
@@ -158,9 +170,41 @@
                 
                 </div>
             </div>
-
-
-
+            <div id="page_num">
+                <ul>
+                <?php
+                if($page <= 1){ //만약 page가 1이면
+                echo "<li><b>◀︎</b></li>"; //처음임
+                }else{ echo "<li><a href='?page=1'>◀︎</a></li>"; //1 이상이면 1페이지로 링크연결
+                }
+          
+                if($page <= 1){ //만약 page가 1이면            
+                }else{ $pre = $page-1; //1보다 큰 page에 1을 빼고, pre변수에 넣어준다.
+                echo "<li><a href='?page=$pre'>◁</a></li>"; //
+                }
+          
+                for($i=$block_start; $i<=$block_end; $i++){ 
+                //for문 반복문을 사용하여, 초기값을 블록의 시작번호를 조건으로 블록시작번호가 마지박블록보다 작거나 같을 때까지 $i를 반복시킨다
+                    if($page == $i){ //만약 page가 $i와 같다면 
+                    echo "<li><b>[$i]</b></li>"; //현재 페이지에 해당하는 번호에 굵은 빨간색을 적용한다
+                    }else{
+                    echo "<li><a href='?page=$i'>[$i]</a></li>"; //아니라면 $i
+                    }
+                }
+          
+                if($block_num >= $total_block){ //만약 현재 블록이 블록 총개수보다 크거나 같다면
+                }else{//현재 블록 < 블록 전채 개수
+                $next = $page + 1; //next변수에 page + 1을 해준다.
+                echo "<li><a href='?page=$next'>▷</a></li>"; //다음글자에 next변수를 링크한다. 현재 4페이지에 있다면 +1하여 5페이지로 이동하게 된다.
+                }
+          
+                if($page >= $total_page){ //만약 page가 페이지수보다 크거나 같다면
+                echo "<li><b>▶︎</b></li>"; //마지막 글자에 긁은 빨간색을 적용한다.
+                }else{
+                echo "<li><a href='?page=$total_page'>▶︎</a></li>"; //아니라면 마지막글자에 total_page를 링크한다.
+                }?>
+      </ul>
+    </div>
 
         <!-- Footer-->
         <footer class="py-5 bg-dark">
