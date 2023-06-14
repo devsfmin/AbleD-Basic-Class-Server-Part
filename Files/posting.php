@@ -64,14 +64,14 @@
             <div id="write_area">
                 <form action="write_ok.php" method="post">
                     <div id="in_title">
-                        <textarea name="title" id="utitle" rows="1" cols="55" placeholder="제목" maxlength="100" required></textarea>
+                        <textarea name="title" rows="1" cols="55" placeholder="제목" maxlength="100" required></textarea>
                     </div>
                     <div class="wi_line"></div>
                     <div id="in_content">
-                        <textarea name="in_content" id="in_content" placeholder="작성할 내용" required></textarea>
+                        <textarea name="in_content" placeholder="작성할 내용" required></textarea>
                     </div>
                     <div id="in_tag">
-                        <textarea name="in_tag" id="in_tag" placeholder="#해시태그" required></textarea>
+                        <textarea name="in_tag" placeholder="#해시태그" required></textarea>
                     </div>
                     <div class="bt_se">
                         <button class="btn btn-outline-dark mx-auto" button type ="button" onclick="location.href='write_ok.php'">작성 완료</button>
