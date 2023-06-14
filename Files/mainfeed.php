@@ -178,7 +178,7 @@
             </div>
             <div class="container px-4 px-lg-5 my-3">
                 <div class="text-center">
-                    <p class="fw-normal text-black-50 mb-0">
+                    <p class="fs-6 fw-normal text-black-50 mb-0">
                     <?php
                     if($page <= 1){ //만약 page가 1이면
                     echo "<b> ◀︎ </b>"; //처음임
