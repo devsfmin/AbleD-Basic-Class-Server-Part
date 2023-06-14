@@ -4723,7 +4723,7 @@ textarea.form-control-lg {
 
 .card-img-top{
   height:250px;
-  max-height:100%;
+  max-width:100%;
   object-fit: contain;
 }
 
