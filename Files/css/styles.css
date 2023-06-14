@@ -177,7 +177,7 @@ body {
   color:#333;
   width: 850px;
   height: 80px;
-  resize : none;
+  resize: none;
 }
 #in_tag input {
 	font:14px;
@@ -188,10 +188,10 @@ body {
   margin-bottom: 20px;
 	text-align:center;
 }
-/* .bt_se button { */
-	/* width:100px; */
-	/* height:25px; */
-/* } */
+.bt_se button {
+	width:100px;
+	height:25px;
+}
 
 @media (min-width: 992px) {
   .masthead {
