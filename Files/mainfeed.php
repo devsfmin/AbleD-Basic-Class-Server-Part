@@ -176,41 +176,43 @@
                 
                 </div>
             </div>
-            <div id="page_num">
-                <p class="fw-normal text-black-50 mb-0">
-                <?php
-                if($page <= 1){ //만약 page가 1이면
-                echo "<b> ◀︎ </b>"; //처음임
-                }else{ echo "<a href='?page=1'> ◀︎ </a>"; //1 이상이면 1페이지로 링크연결
-                }
-          
-                if($page <= 1){ //만약 page가 1이면            
-                }else{ $pre = $page-1; //1보다 큰 page에 1을 빼고, pre변수에 넣어준다.
-                echo "<a href='?page=$pre'> ◁ </a>"; //
-                }
-          
-                for($i=$block_start; $i<=$block_end; $i++){ 
-                //for문 반복문을 사용하여, 초기값을 블록의 시작번호를 조건으로 블록시작번호가 마지박블록보다 작거나 같을 때까지 $i를 반복시킨다
-                    if($page == $i){ //만약 page가 $i와 같다면 
-                    echo "<b> [$i] </b>"; //현재 페이지에 해당하는 번호에 굵은 빨간색을 적용한다
-                    }else{
-                    echo "<a href='?page=$i'> [$i] </a>"; //아니라면 $i
+            <div class="container px-4 px-lg-5 my-3">
+                <div class="text-center">
+                    <p class="fw-normal text-black-50 mb-0">
+                    <?php
+                    if($page <= 1){ //만약 page가 1이면
+                    echo "<b> ◀︎ </b>"; //처음임
+                    }else{ echo "<a href='?page=1'> ◀︎ </a>"; //1 이상이면 1페이지로 링크연결
                     }
-                }
-          
-                if($block_num >= $total_block){ //만약 현재 블록이 블록 총개수보다 크거나 같다면
-                }else{//현재 블록 < 블록 전채 개수
-                $next = $page + 1; //next변수에 page + 1을 해준다.
-                echo "<a href='?page=$next'> ▷ </a>"; //다음글자에 next변수를 링크한다. 현재 4페이지에 있다면 +1하여 5페이지로 이동하게 된다.
-                }
-          
-                if($page >= $total_page){ //만약 page가 페이지수보다 크거나 같다면
-                echo "<b> ▶︎ </b>"; //마지막 글자에 긁은 빨간색을 적용한다.
-                }else{
-                echo "<a href='?page=$total_page'> ▶︎ </a>"; //아니라면 마지막글자에 total_page를 링크한다.
-                }?>
-      </p>
-    </div>
+            
+                    if($page <= 1){ //만약 page가 1이면            
+                    }else{ $pre = $page-1; //1보다 큰 page에 1을 빼고, pre변수에 넣어준다.
+                    echo "<a href='?page=$pre'> ◁ </a>"; //
+                    }
+            
+                    for($i=$block_start; $i<=$block_end; $i++){ 
+                    //for문 반복문을 사용하여, 초기값을 블록의 시작번호를 조건으로 블록시작번호가 마지박블록보다 작거나 같을 때까지 $i를 반복시킨다
+                        if($page == $i){ //만약 page가 $i와 같다면 
+                        echo "<b> [$i] </b>"; //현재 페이지에 해당하는 번호에 굵은 빨간색을 적용한다
+                        }else{
+                        echo "<a href='?page=$i'> [$i] </a>"; //아니라면 $i
+                        }
+                    }
+            
+                    if($block_num >= $total_block){ //만약 현재 블록이 블록 총개수보다 크거나 같다면
+                    }else{//현재 블록 < 블록 전채 개수
+                    $next = $page + 1; //next변수에 page + 1을 해준다.
+                    echo "<a href='?page=$next'> ▷ </a>"; //다음글자에 next변수를 링크한다. 현재 4페이지에 있다면 +1하여 5페이지로 이동하게 된다.
+                    }
+            
+                    if($page >= $total_page){ //만약 page가 페이지수보다 크거나 같다면
+                    echo "<b> ▶︎ </b>"; //마지막 글자에 긁은 빨간색을 적용한다.
+                    }else{
+                    echo "<a href='?page=$total_page'> ▶︎ </a>"; //아니라면 마지막글자에 total_page를 링크한다.
+                    }?>
+                    </p>
+                </div>
+            </div>
 
         <!-- Footer-->
         <footer class="py-5 bg-dark">
