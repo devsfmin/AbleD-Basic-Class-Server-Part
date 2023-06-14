@@ -121,9 +121,10 @@
                         <?php echo $board['wr_date']; ?>
                         </div>
                         <!-- Post image-->
-                        <img class="card-img-top" src="<?php if($board['imgrul']=NULL){echo "https://usagi-post.com/wp-content/uploads/2020/05/no-image-found-360x250-1.png";}else{
-                            echo $board['imgurl'];
-                        }?>" alt="..." />
+                        <?php if($board['imgurl']=NULL){?>
+                        <img class="card-img-top" src="https://usagi-post.com/wp-content/uploads/2020/05/no-image-found-360x250-1.png" alt="..." />
+                        <?php }else{?>
+                        <img class="card-img-top" src="<?php echo $board['imgurl']; ?>" alt="..." /> <?php }?>
                             <!-- Post details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
