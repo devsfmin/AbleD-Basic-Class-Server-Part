@@ -18,11 +18,6 @@ if(!isset($_SESSION['user'])){ /* 세션 x 의 경우 */
 //작성 시간 추출
 $wr_date = date('Y-m-d');
 
-//조건 달성 검사(1)
-//if ($title==NULL || $content==NULL){//제목 또는 내용이 없을 경우
-    // echo "<script>alert(\"제목 또는 내용을 입력해 주세요!\");</script>";
-    // exit();}
-
 //데이터 접근
 $conn = mysqli_connect(
     'localhost', 'min', '0000', 'members','3306');
@@ -30,10 +25,6 @@ $conn = mysqli_connect(
 if (mysqli_connect_errno())//접근 실패 시
     { printf("Connection failed %s\n", mysqli_connect_error());
     exit(); }
-
-//transaction
-// mysqli_query($mysqli, "Start transaction");
-
 
 $last_id =-1;
 $sql_post = "INSERT INTO board (writer, title, imgurl, content, wr_date, tag) VALUES ('$writer','$title','$imgurl','$content','$wr_date','$tag')";
@@ -45,11 +36,15 @@ if($result_post){
 //작성한 내용들이 테이블에 삽입되었는지 확인하기
 if($result_post){
     echo "<script>alert(\"저장되었습니다!\");</script>";
-    header('Location: mainfeed.php');
+?>
+<meta http-equiv="refresh" content="0;url=mainfeed.php" />
+<?php 
     mysqli_query($conn, "COMMIT");
 } else {
     mysqli_query($conn, "ROLLBACK");
-    echo "작성에 실패하였습니다!";
-}
+    echo "<script>alert(\"작성에 실패하였습니다!\");</script>";
+?>
+<meta http-equiv="refresh" content="0;url=posting.php" />
+<?php }
 ?>
 
