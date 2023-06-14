@@ -106,11 +106,11 @@
             <div class="container px-4 px-lg-5 mt-5">
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                     <?php
-                    $listup = "SELECT * from board order by postnum desc limit 0,5";
+                    $listup = "SELECT * from board order by postnum desc";
                     $result = mysqli_query($conn, $listup);
-                    while($board = $result->fetch_array());
-                    {//title 변수처리하기
-                        $title=$board["title"];
+                    while($board = mysqli_fetch_assoc($result));
+                    { //title 변수처리하기
+                        $title = $board["title"];
                         if(strlen($title)>20)
                         {$title=str_replace($board["title"],mb_substr($board["title"],0,20,"utf-8")."...",$board["title"]);} ?>
 
