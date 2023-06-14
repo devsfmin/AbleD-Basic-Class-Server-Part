@@ -72,6 +72,7 @@
                     </div>
                     <div id="image_url">
                         <textarea id="imgurl" name="imgurl" placeholder="이미지 URL" required></textarea>
+                    </div>
                     <div id="in_tag">
                         <textarea id="in_tag" name="tag" placeholder="#해시태그" required></textarea>
                     </div>
