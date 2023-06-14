@@ -109,10 +109,15 @@
                     $listup = "SELECT * from board order by postnum desc";
                     $result = mysqli_query($conn, $listup);
                     while($board = mysqli_fetch_assoc($result))
-                    { //title 변수처리하기
-                        $title = $board["title"];
+                        { //title 변수처리하기
+                        $title = $board['title'];
                         if(strlen($title)>20)
-                        {$title=str_replace($board["title"],mb_substr($board["title"],0,20,"utf-8")."...",$board["title"]);} ?>
+                        {$title = str_replace($board['title'],mb_substr($board['title'],0,20,"utf-8")."...",$board['title']);
+                        } ?>
+
+<!--$text = '가나다라마바사';
+$strim = mb_strimwidth($text, '0', '5', '...', 'utf-8');
+echo $strim;-->
 
                     <div class="col mb-5">
                         <div class="card h-100">
