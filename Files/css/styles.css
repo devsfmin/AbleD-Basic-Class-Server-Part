@@ -163,11 +163,21 @@ body {
 	margin-top:20px;
 }
 #in_content textarea {
-	font:14px;
+	font:15px;
 	color:#333;
 	width: 850px;
 	height: 300px;
 	resize: none;
+}
+#in_tag {
+  margin-top: 20px;
+}
+#in_tag textarea {
+  font:15px;
+  color:#333;
+  width: 850px;
+  height: 80px;
+  resize : none;
 }
 #in_tag input {
 	font:14px;
