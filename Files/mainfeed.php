@@ -108,7 +108,7 @@
                     <?php
                     $listup = "SELECT * from board order by postnum desc";
                     $result = mysqli_query($conn, $listup);
-                    while($board = mysqli_fetch_assoc($result));
+                    while($board = mysqli_fetch_assoc($result))
                     { //title 변수처리하기
                         $title = $board["title"];
                         if(strlen($title)>20)
