@@ -113,6 +113,7 @@
                         $title = $board['title'];
                         if(strlen($title)>10){
                             $strim = mb_strimwidth($board['title'], '0', '10', '...', 'utf-8');
+                            $title = $strim;
                         }
                         // {$title = str_replace($board['title'],mb_substr($board['title'],0,20,"utf-8")."...",$board['title']);
                         // } ?>
