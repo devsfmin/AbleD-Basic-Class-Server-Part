@@ -74,7 +74,7 @@
                         <textarea name="tag" id="tag" placeholder="#해시태그" required></textarea>
                     </div>
                     <div class="bt_se">
-                        <button class="btn btn-outline-dark mx-auto" button type ="button" onclick="location.href='posting.php'">작성 완료</button>
+                        <button class="btn btn-outline-dark mx-auto" button type ="button" onclick="location.href='write_ok.php'">작성 완료</button>
                     </div>
                 </form>
             </div>
