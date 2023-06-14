@@ -37,18 +37,18 @@ if (mysqli_connect_errno())//접근 실패 시
 
 $last_id =-1;
 $sql_post = "INSERT INTO board (writer, title, imgurl, content, wr_date, tag) VALUES ('$writer','$title','$imgurl','$content','$wr_date','$tag')";
-$result_post = mysqli_query($mysqli, $sql_post);
+$result_post = mysqli_query($conn, $sql_post);
 if($result_post){
-    $last_id = mysqli_insert_id($mysqli);}
+    $last_id = mysqli_insert_id($conn);}
 
     
 //작성한 내용들이 테이블에 삽입되었는지 확인하기
 if($result_post){
     echo "<script>alert(\"저장되었습니다!\");</script>";
     header('Location: mainfeed.php');
-    mysqli_query($mysqli, "COMMIT");
+    mysqli_query($conn, "COMMIT");
 } else {
-    mysqli_query($mysqli, "ROLLBACK");
+    mysqli_query($conn, "ROLLBACK");
     echo "작성에 실패하였습니다!";
 }
 ?>
