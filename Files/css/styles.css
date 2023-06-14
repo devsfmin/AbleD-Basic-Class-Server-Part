@@ -4722,8 +4722,7 @@ textarea.form-control-lg {
 }
 
 .card-img-top{
-  height:200px;
-
+  height:180px;
   object-fit: contain;
 }
 
