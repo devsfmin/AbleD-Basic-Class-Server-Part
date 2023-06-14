@@ -5,7 +5,6 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <title>Social Paper Main Page</title>
-
         <!--폰트 관련 -->
          <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
          <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
@@ -16,6 +15,26 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
     </head>
+
+    <?php
+    //현재 페이지
+    $page = isset($_GET['page']) ? $_GET['page']:1;
+    //1페이지당 보여줄 데이터 갯수
+    $list_num = 5;
+    //한 블럭당 페이지 수
+    $page_num = 5;
+    
+    //데이터 접근
+    $conn = mysqli_connect(
+    'localhost', 'min', '0000', 'members','3306');
+
+    if (mysqli_connect_errno())//접근 실패 시
+    { printf("Connection failed %s\n", mysqli_connect_error());
+    exit(); }
+
+    //전체 페이지 갯수
+    $total_page=ceil($total/$list_num)
+    ?>
 
     <body>
     <!-- NO session 네비 (Navigation) 코너 : index logo / all DB contents / introducing-->
@@ -83,22 +102,32 @@
                     <!--</?php echo $username;?> -->
                     <!-- 님의 개인 페이지 </p> -->
             </div>
+            
             <div class="container px-4 px-lg-5 mt-5">
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                    <?php $sql = $conn("SELECT * from board order by postnum desc limit 0,5");
+                    while($board = $sql->fetch_array())
+                    {//title 변수처리하기
+                        $title=$board["title"];
+                        if(strlen($title)>20)
+                        {$title=str_replace($board["title"],mb_substr($board["title"],0,20,"utf-8")."...",$board["title"]);} ?>
+
                     <div class="col mb-5">
-                        <div class="card h-80">
-                        <!-- Time badge-->
-                        <div class="badge rounded-pill bg-danger text-white position-absolute" style="top: 0.5rem; left: 0.5rem">25min</div>
+                        <div class="card h-100">
+                        <!-- 작성 시간 뱃지-->
+                        <div class="badge rounded-pill bg-danger text-white position-absolute" style="top: 0.5rem; left: 0.5rem">
+                        <?php echo $board['wr_date']; ?>
+                        </div>
                         <!-- Post image-->
                         <img class="card-img-top" src="https://img.insight.co.kr/static/2021/12/19/1200/img_20211219074348_3179gowq.jpg" alt="..." />
                             <!-- Post details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
-                                    <!-- 소식 작성자-->
-                                    <h4 class="fw-bolder">진구쨩</h4>
-                                    <h6 class="fw-normal"> @jin9ice</h6>
-                                    <!-- 소식 내용-->
-                                    날씨가 춥다. 그러나 얼어 죽어도 아이스 아메리카노다. 아아 없이는 살 수 없는 몸이 되어버렸어...
+                                    <!-- 제목과 작성자-->
+                                    <h4 class="fw-bolder"><?php echo $board['title']; ?></h4>
+                                    <h6 class="fw-normal">@<?php echo $board['writer']; ?></h6>
+                                    <!-- 내용-->
+                                    <?php echo $board['content']; ?>
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -109,155 +138,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Time badge-->
-                            <div class="badge rounded-pill bg-warning text-black position-absolute" style="top: 0.5rem; left: 0.5rem">19 Feb</div>
-                            <!-- Post image-->
-                            <img class="card-img-top" src="https://i.pinimg.com/originals/d3/29/33/d3293384656aa87733a662f231b5dfdf.jpg" alt="..." />
-                            <!-- Post details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- 소식 작성자-->
-                                    <h4 class="fw-bolder">지친직장러</h4>
-                                    <h6 class="fw-normal"> @wannagohome123</h6>
-                                    <!-- 소식 내용-->
-                                    늦은 저녁 퇴근길... 인스타 감성으로 올려본다... 내일 또 출근이다... 퇴사 마렵다...
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">더 보기</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Title~asd</h5>
-                                    <!-- Product price-->
-                                    <span class="text-muted text-decoration-line-through">$50.00</span>
-                                    $25.00
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Popular Item</h5>
-                                    <!-- Product reviews-->
-                                    <div class="d-flex justify-content-center small text-warning mb-2">
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                    </div>
-                                    <!-- Product price-->
-                                    $40.00
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Sale Item</h5>
-                                    <!-- Product price-->
-                                    <span class="text-muted text-decoration-line-through">$50.00</span>
-                                    $25.00
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Fancy Product</h5>
-                                    <!-- Product price-->
-                                    $120.00 - $280.00
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Example Sale badge-->
-                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-                            <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Special Item</h5>
-                                    <!-- Product price-->
-                                    <span class="text-muted text-decoration-line-through">$20.00</span>
-                                    $18.00
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Popular Item</h5>
-                                    <!-- Product price-->
-                                    $40.00
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php }
+                    ?>
+                
                 </div>
             </div>
 
