@@ -32,7 +32,7 @@ if (mysqli_connect_errno())//접근 실패 시
     exit(); }
 
 //transaction
-mysqli_query($mysqli, "Start transaction");
+// mysqli_query($mysqli, "Start transaction");
 
 
 $last_id =-1;
