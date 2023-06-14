@@ -172,12 +172,12 @@ body {
 	font:14px;
 	margin-top:10px;
 }
-#bt_se {
+.bt_se {
 	margin-top:20px;
   margin-bottom: 20px;
 	text-align:center;
 }
-#bt_se button {
+.bt_se button {
 	width:100px;
 	height:25px;
 }
