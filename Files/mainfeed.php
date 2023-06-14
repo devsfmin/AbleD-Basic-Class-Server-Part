@@ -111,8 +111,8 @@
                     while($board = mysqli_fetch_assoc($result))
                         { //title 변수처리하기
                         $title = $board['title'];
-                        if(strlen($title)>20){
-                            $strim = mb_strimwidth($board['title'], '0', '20', '...', 'utf-8');
+                        if(strlen($title)>30){
+                            $strim = mb_strimwidth($board['title'], '0', '30', '...', 'utf-8');
                             $title = $strim;
                         }
                         // {$title = str_replace($board['title'],mb_substr($board['title'],0,20,"utf-8")."...",$board['title']);
@@ -134,7 +134,7 @@
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- 제목과 작성자-->
-                                    <h4 class="fw-bolder"><?php echo $title; ?></h4>
+                                    <h5 class="fw-bolder"><?php echo $title; ?></h5>
                                     <h6 class="fw-normal">@<?php echo $board['writer']; ?></h6>
                                     <!-- 내용-->
                                     <?php echo $board['content']; ?>
