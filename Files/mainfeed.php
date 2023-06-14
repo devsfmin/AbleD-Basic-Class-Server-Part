@@ -121,7 +121,9 @@
                         <?php echo $board['wr_date']; ?>
                         </div>
                         <!-- Post image-->
-                        <img class="card-img-top" src="https://img.insight.co.kr/static/2021/12/19/1200/img_20211219074348_3179gowq.jpg" alt="..." />
+                        <img class="card-img-top" src="<?php if($board['imgrul']=NULL){echo 'https://usagi-post.com/wp-content/uploads/2020/05/no-image-found-360x250-1.png';}else{
+                            echo $board['imgurl'];
+                        }?>" alt="..." />
                             <!-- Post details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
