@@ -158,6 +158,16 @@ body {
 	height: 300px;
 	resize: none;
 }
+#image_url {
+  margin-top: 10px;
+}
+#image_url textarea {
+  font: 15px;
+  color: #06357a;
+  width: 700px;
+  height: 40px;
+  resize: none;
+}
 #in_tag {
   margin-top: 10px;
 }

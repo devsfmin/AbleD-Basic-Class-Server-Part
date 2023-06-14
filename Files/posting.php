@@ -70,6 +70,8 @@
                     <div id="in_content">
                         <textarea id="in_content" name="content"  placeholder="작성할 내용" required></textarea>
                     </div>
+                    <div id="image_url">
+                        <textarea id="imgurl" name="imgurl" placeholder="이미지 URL" required></textarea>
                     <div id="in_tag">
                         <textarea id="in_tag" name="tag" placeholder="#해시태그" required></textarea>
                     </div>
