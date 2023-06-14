@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php 
-
+echo "asd";
 ?>
 <html lang="en">
     <head>head</head>
