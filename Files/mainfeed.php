@@ -103,7 +103,7 @@
                     }else{$page = 1;}
                     
                     //게시판 총 데이터 갯수
-                    $sql = mysqli_query("SELECT * from board");
+                    $sql = query("SELECT * from board");
                     $row_num = mysqli_num_rows($sql);
                     
                     $list_sz = 8;//1페이지당 보여줄 데이터 갯수
