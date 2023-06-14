@@ -87,13 +87,18 @@
             </div>
         </nav>
     
-        <!-- Board Section -->
-            <div class="container px-4 px-lg-5 mt-5">
-                <!-- <p class="masthead-subheading font-weight-light"> -->
-                    <!--</?php echo $username;?> -->
-                    <!-- 님의 개인 페이지 </p> -->
+        <!-- Header-->
+        <header class="bg-dark py-5">
+            <div class="container px-4 px-lg-5 my-3">
+                <div class="text-center text-white"><!--텍스트 박스-->
+                    <h2 class="display-5 fw-bolder">피드 모아보기</h2>
+                    <p class="lead fw-normal text-white-50 mb-0">최신 피드를 모아봅니다.</p>
+                </div>
             </div>
-            
+        </header>
+
+        <!-- Board Section -->
+        
             <div class="container px-4 px-lg-5 mt-5">
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                     <?php
@@ -172,7 +177,7 @@
                 </div>
             </div>
             <div id="page_num">
-                <p>
+                <p class="fw-normal text-black-50 mb-0">
                 <?php
                 if($page <= 1){ //만약 page가 1이면
                 echo "<li><b>◀︎</b></li>"; //처음임
