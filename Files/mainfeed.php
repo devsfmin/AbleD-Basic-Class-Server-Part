@@ -121,7 +121,7 @@
                         <?php echo $board['wr_date']; ?>
                         </div>
                         <!-- Post image-->
-                        <img class="card-img-top" src="<?php if($board['imgrul']=NULL){echo 'https://usagi-post.com/wp-content/uploads/2020/05/no-image-found-360x250-1.png';}else{
+                        <img class="card-img-top" src="<?php if($board['imgrul']=NULL){echo "https://usagi-post.com/wp-content/uploads/2020/05/no-image-found-360x250-1.png";}else{
                             echo $board['imgurl'];
                         }?>" alt="..." />
                             <!-- Post details-->
