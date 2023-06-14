@@ -126,7 +126,7 @@ body {
 }
 
 #board_write {
-	width:850px;
+	width:700px;
 	position:relative;
 	margin:0 auto;
 }
@@ -140,31 +140,31 @@ body {
 	font-weight:bold;
 	font-size:24px;
 	color:#333;
-	width: 850px;
+	width: 700px;
 	border:none;
 	resize: none;
 }
 .wi_line {
 	border:solid 0.5px lightgray;
-	margin-top:20px;
+	margin-top:10px;
 }
 #in_content {
-	margin-top:20px;
+	margin-top:10px;
 }
 #in_content textarea {
 	font:15px;
 	color:#333;
-	width: 850px;
+	width: 700px;
 	height: 300px;
 	resize: none;
 }
 #in_tag {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 #in_tag textarea {
   font:15px;
   color:#333;
-  width: 850px;
+  width: 700px;
   height: 80px;
   resize: none;
 }
@@ -175,7 +175,6 @@ body {
 .bt_se {
 	margin-top:20px;
   margin-bottom: 20px;
-	text-align:center;
 }
 .bt_se button {
 	width:100px;
