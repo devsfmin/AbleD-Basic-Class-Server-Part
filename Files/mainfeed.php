@@ -117,8 +117,8 @@
                         }
                         // content 변수처리하기
                         $content = $board['content'];
-                        if(strlen($content)>20){
-                            $strim2 = mb_strimwidth($board['content'], '0', '20', '...', 'utf-8');
+                        if(strlen($content)>80){
+                            $strim2 = mb_strimwidth($board['content'], '0', '80', '...', 'utf-8');
                             $content = $strim2;
                         }
                         // {$title = str_replace($board['title'],mb_substr($board['title'],0,20,"utf-8")."...",$board['title']);
