@@ -33,7 +33,7 @@
     exit(); }
 
     //전체 페이지 갯수
-    $total_page=ceil($total/$list_num)
+    // $total_page=ceil($total/$list_num)
     ?>
 
     <body>
