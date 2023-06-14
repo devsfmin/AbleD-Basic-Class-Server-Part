@@ -115,9 +115,14 @@
                             $strim = mb_strimwidth($board['title'], '0', '30', '...', 'utf-8');
                             $title = $strim;
                         }
+                        // content 변수처리하기
+                        $content = $board['content'];
+                        if(strlen($content)>20){
+                            $strim2 = mb_strimwidth($board['content'], '0', '20', '...', 'utf-8');
+                            $content = $strim2;
+                        }
                         // {$title = str_replace($board['title'],mb_substr($board['title'],0,20,"utf-8")."...",$board['title']);
                         // } ?>
-
                     <div class="col mb-5">
                         <div class="card h-100">
                         <!-- 작성 시간 뱃지-->
@@ -137,7 +142,7 @@
                                     <h5 class="fw-bolder"><?php echo $title; ?></h5>
                                     <h6 class="fw-normal">@<?php echo $board['writer']; ?></h6>
                                     <!-- 내용-->
-                                    <?php echo $board['content']; ?>
+                                    <?php echo $content; ?>
                                 </div>
                             </div>
                             <!-- Product actions-->
