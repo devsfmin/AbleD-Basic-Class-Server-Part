@@ -1,4 +1,5 @@
 <?php
+session_start();
 //post될 요소들 : title, content, imgurl, tag
 $title = $_POST['title'];
 $content = $_POST['content'];
