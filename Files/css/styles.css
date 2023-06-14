@@ -126,28 +126,17 @@ body {
 }
 
 #board_write {
-	width:900px;
+	width:850px;
 	position:relative;
 	margin:0 auto;
 }
 #write_area {
 	margin-top:70px;
 	font-size:14px;}
-/* #in_name { */
-	/* margin-top:30px; */
-/* } */
-/* #in_name textarea {
-	font-weight:bold;
-	font-size:26px;
-	color:#333;
-	width: 900px;
-	border:none;
-	resize: none;
-} */
-.in_title {
+#in_title {
 	margin-top:30px;
 }
-.in_title textarea {
+#in_title textarea {
 	font-weight:bold;
 	font-size:24px;
 	color:#333;
@@ -159,36 +148,36 @@ body {
 	border:solid 0.5px lightgray;
 	margin-top:20px;
 }
-.in_content {
+#in_content {
 	margin-top:20px;
 }
-.in_content textarea {
+#in_content textarea {
 	font:15px;
 	color:#333;
 	width: 850px;
 	height: 300px;
 	resize: none;
 }
-.in_tag {
+#in_tag {
   margin-top: 20px;
 }
-.in_tag textarea {
+#in_tag textarea {
   font:15px;
   color:#333;
   width: 850px;
   height: 80px;
   resize: none;
 }
-.in_tag input {
+#in_tag input {
 	font:14px;
 	margin-top:10px;
 }
-.bt_se {
+#bt_se {
 	margin-top:20px;
   margin-bottom: 20px;
 	text-align:center;
 }
-.bt_se button {
+#bt_se button {
 	width:100px;
 	height:25px;
 }

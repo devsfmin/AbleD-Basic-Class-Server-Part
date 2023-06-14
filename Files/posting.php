@@ -79,26 +79,6 @@
                 </form>
             </div>
         </div>
-            <!-- <div class="container px-4 px-lg-5 mt-5">
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                <form action="post_ok.php" method="post">
-                    <div id="in_title">
-                        <textarea name="title" id="title" rows="1" cols="55" placeholder="제목" maxlength="100" required></textarea>
-                    </div>
-                    <div class="wi_line"></div>
-                    <div id="in_content">
-                        <textarea name="content" id="content" placeholder="작성할 내용" required></textarea>
-                    </div>
-                    <div id="in_tag">
-                        <textarea name="tag" id="tag" placeholder="해시태그" required></textarea> 
-                    </div>
-                    <div class="bt_se">
-                        <button type="submit">글 작성</button>
-                    </div>
-                    </form>
-                </div>
-            </div> -->
-
 
         <!-- Footer-->
         <footer class="py-5 bg-dark">
