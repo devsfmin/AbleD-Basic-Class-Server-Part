@@ -4721,6 +4721,10 @@ textarea.form-control-lg {
   border-radius: calc(0.25rem - 1px);
 }
 
+.card-img-top{
+  height:fit-content;
+}
+
 .card-img,
 .card-img-top,
 .card-img-bottom {
