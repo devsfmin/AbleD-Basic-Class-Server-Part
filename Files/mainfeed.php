@@ -166,7 +166,7 @@
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center">
-                                    <a class="btn btn-outline-dark mt-auto" href="#"> 더 보기 </a>
+                                    <a class="btn btn-outline-dark mt-auto" href="read.php?postnum=<?php echo $board["postnum"];?>"> 더 보기 </a>
                                 </div>
                             </div>
                         </div>
