@@ -91,7 +91,7 @@
                     }else{$page = 1;}
                     
                     //게시판 총 데이터 갯수
-                    $sql = "SELECT * from board where writer=$username";
+                    $sql = "SELECT * from board where writer='$username'";
                     $rst = mysqli_query($conn,$sql);
                     $row_num = mysqli_num_rows($rst);
                     
@@ -107,7 +107,7 @@
                     $total_block = ceil($total_page/$block_sz);//블럭 총 갯수
                     $start_num = ($page-1) * $list_sz;//시작 번호 (page-1)에 list 사이즈 곱하기
 
-                    $listup = "SELECT * from board where writer=$username order by postnum desc limit $start_num,$list_sz";
+                    $listup = "SELECT * from board where writer='$username' order by postnum desc limit $start_num,$list_sz";
                     $result = mysqli_query($conn, $listup);
                     if($row_num < 1){echo "소식이 없네용";}
                     while($board = mysqli_fetch_assoc($result))
