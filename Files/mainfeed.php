@@ -72,6 +72,7 @@
                             <?php } else{
                                 $username = $_SESSION['user']; /* 가 아닌 세션 o 의 경우 */
                                 ?>
+                            <button class="btn btn-outline-dark mx-1" button type ="button" id="gopost" onclick="location.href='posting.php' ">글 작성</button>
                             <button class="btn btn-outline-dark mx-1" button type ="button" id="logoutbtn" onclick="location.href='logout.php' ">로그아웃</button>
                             <button class="btn btn-outline-dark" button type="button" onclick="location.href='' ">
                             <i class="bi-heart-fill me-1" style="color:lightcoral"></i>
