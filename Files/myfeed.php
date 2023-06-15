@@ -109,6 +109,7 @@
 
                     $listup = "SELECT * from board where writer=$username order by postnum desc limit $start_num,$list_sz";
                     $result = mysqli_query($conn, $listup);
+                    if($row_num < 1){echo "소식이 없네용";}
                     while($board = mysqli_fetch_assoc($result))
                         { //title 변수처리하기
                         $title = $board['title'];
